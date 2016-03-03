@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ljd.broadcastreceiver">
 
-    <!--<uses-permission android:name="android.permission.BROADCAST_STICKY"></uses-permission>-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,21 +18,8 @@
 
         <receiver
             android:name=".MyReceiver1"
-            android:enabled="true"
-            android:exported="true"
             android:process=":receiver1">
-            <intent-filter android:priority="1">
-                <action android:name="com.example.ljd.BROADCASTRECEIVER" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".MyReceiver2"
-            android:enabled="true"
-            android:exported="true"
-            android:process=":receiver2">
-            <intent-filter android:priority="2">
+            <intent-filter>
                 <action android:name="com.example.ljd.BROADCASTRECEIVER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -41,18 +27,24 @@
         </receiver>
         <receiver
             android:name=".MyReceiver3"
-            android:enabled="true"
-            android:exported="true"
             android:process=":receiver3">
-            <intent-filter android:priority="3">
+            <intent-filter>
+                <action android:name="com.example.ljd.BROADCASTRECEIVER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".MyReceiver2"
+            android:process=":receiver2">
+            <intent-filter>
                 <action android:name="com.example.ljd.BROADCASTRECEIVER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".SecondActivity"
-            android:process=":second"></activity>
+
     </application>
 
 </manifest>
