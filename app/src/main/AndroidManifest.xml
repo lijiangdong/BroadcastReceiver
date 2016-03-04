@@ -19,7 +19,7 @@
         <receiver
             android:name=".MyReceiver1"
             android:process=":receiver1">
-            <intent-filter>
+            <intent-filter android:priority="3">
                 <action android:name="com.example.ljd.BROADCASTRECEIVER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -28,7 +28,7 @@
         <receiver
             android:name=".MyReceiver3"
             android:process=":receiver3">
-            <intent-filter>
+            <intent-filter android:priority="1">
                 <action android:name="com.example.ljd.BROADCASTRECEIVER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -36,8 +36,8 @@
         </receiver>
         <receiver
             android:name=".MyReceiver2"
-            android:process=":receiver2">
-            <intent-filter>
+            android:process=":receiver2" >
+            <intent-filter android:priority="2">
                 <action android:name="com.example.ljd.BROADCASTRECEIVER" />
 
                 <category android:name="android.intent.category.DEFAULT" />

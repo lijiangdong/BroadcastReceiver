@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Constant.BROADCAST_ACTION);
+        intentFilter.setPriority(0);
         registerReceiver(myReceiver,intentFilter);
     }
 
@@ -51,10 +52,10 @@ public class MainActivity extends AppCompatActivity {
 //        intent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
         intent.putExtra(Constant.CONFERENCE_KEY, "你好，明天九点半101会议室开会。");
 //        sendBroadcast(intent);
-//        Bundle bundle = new Bundle();
-//        bundle.putString("key", "BroadcastReceiver");
-//        intent.putExtras(bundle);
-        sendOrderedBroadcast(intent,null,null,null, Activity.RESULT_OK ,null,null);
+        Bundle bundle = new Bundle();
+        bundle.putString(Constant.DINE_KEY, "今天晚上聚餐");
+        intent.putExtras(bundle);
+        sendOrderedBroadcast(intent,null,null,null, Activity.RESULT_OK ,null,bundle);
 
     }
 

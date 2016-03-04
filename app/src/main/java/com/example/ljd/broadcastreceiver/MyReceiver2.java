@@ -12,10 +12,10 @@ public class MyReceiver2 extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-//        abortBroadcast();
         if (Constant.BROADCAST_ACTION.equals(intent.getAction())){
             Log.d(TAG, intent.getStringExtra(Constant.CONFERENCE_KEY));
+            Log.d(TAG, getResultExtras(true).getString(Constant.DINE_KEY));
+            abortBroadcast();
         }
     }
 }
-//            getResultExtras(false).putString("test","haha");
